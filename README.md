@@ -57,7 +57,7 @@ This project follows the **Page Object Model (POM)** and **Data-Driven** pattern
 
 - Run only **navigation search tests**:
   ```bash
-  npm run test:navSearch
+  npm run test:sidebarSearch
   ```
 
 - Run **regression tests**:
@@ -83,7 +83,7 @@ This project follows the **Page Object Model (POM)** and **Data-Driven** pattern
 src
  ├── data               # Test data
  │    ├── loginData.ts
- │    └── navSearchData.ts
+ │    └── sidebarSearchData.ts
  ├── pom                # Page Object Model
  │    ├── components    # Common UI components
  │    │     └── NavigationBar.ts
@@ -137,7 +137,7 @@ README.md
 ### 2. **Test Tag Convention**
 - `@smoke`: Basic, quick tests to verify system functionality (e.g., login with valid credentials, loading the main page).
 - `@regression`: Covers main flows and edge cases, ensuring no bugs appear during releases.  
-- `@login`, `@navSearch`: Tags based on **module** or **feature** for easier filtering.
+- `@login`, `@sidebarSearch`: Tags based on **module** or **feature** for easier filtering.
 
 ### 3. **Other Conventions**
 - **Page Object Model (POM):**

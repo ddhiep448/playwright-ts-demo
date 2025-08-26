@@ -1,11 +1,11 @@
 {
-  "name": "playwright-orangehrm-pom",
+  "name": "playwright-ts-demo",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "test:all": "playwright test",
     "test:login": "playwright test -g '@login'",
-    "test:navSearch": "playwright test -g '@navSearch'",
+    "test:sidebarSearch": "playwright test -g '@sidebarSearch'",
     "test:regression": "playwright test -g '@regression'",
     "test:smoke": "playwright test -g '@regression'",
     "test:login_smoke": "playwright test -g '@login|@smoke'",

@@ -11,7 +11,7 @@ export type SearchCase = {
   expect: DataSearchExpectation;
 };
 
-export function assertNavSearch(visibleResultTexts: string[], expectation: DataSearchExpectation) {
+export function assertSidebarSearch(visibleResultTexts: string[], expectation: DataSearchExpectation) {
   if (expectation.type === 'has') {
     for (const item of expectation.items) {
       const ok = visibleResultTexts.some(t => t.trim().toLowerCase() === item.trim().toLowerCase());
@@ -25,26 +25,28 @@ export function assertNavSearch(visibleResultTexts: string[], expectation: DataS
   }
 }
 
-export const navSearchData: SearchCase[] = [
-  { name: 'Exact match with single word - @navSearch @regression', query: 'Dashboard', expect: { type: 'has', items: ['Dashboard'] } },
+export const sidebarSearchData: SearchCase[] = [
+  { name: 'SRH-001 - Exact match with single word - @sidebarSearch @regression', query: 'Dashboard', expect: { type: 'has', items: ['Dashboard'] } },
 
-  { name: 'Exact match with multiple word - @navSearch @regression @smoke', query: 'My Info', expect: { type: 'has', items: ['My Info'] } },
+  { name: 'SRH-002 - Exact match with multiple word - @sidebarSearch @regression @smoke', query: 'My Info', expect: { type: 'has', items: ['My Info'] } },
 
-  { name: 'Partial match with single word - @navSearch @regression', query: 'Recr', expect: { type: 'has', items: ['Recruitment'] } },
+  { name: 'SRH-003 - Partial match with single word - @sidebarSearch @regression', query: 'Recr', expect: { type: 'has', items: ['Recruitment'] } },
 
-  { name: 'Partial match with multiple words - @navSearch @regression @smoke', query: 'My in', expect: { type: 'has', items: ['My Info'] } },
+  { name: 'SRH-004 - Partial match with multiple words - @sidebarSearch @regression @smoke', query: 'My In', expect: { type: 'has', items: ['My Info'] } },
 
-  { name: 'Case-insensitive search - @navSearch @regression', query: 'admin', expect: { type: 'has', items: ['Admin'] } },
+  { name: 'SRH-005 - Lowercase search - @sidebarSearch @regression', query: 'admin', expect: { type: 'has', items: ['Admin'] } },
 
-  { name: 'Leading/trailing spaces in query - @navSearch', query: '   My   ', expect: { type: 'noItem' } },
+  { name: 'SRH-006 - Uppercase search - @sidebarSearch @regression', query: 'ADMIN', expect: { type: 'has', items: ['Admin'] } },
 
-  { name: 'Very long query (length boundary) - @navSearch', query: 'x'.repeat(512), expect: { type: 'noItem' } },
+  { name: 'SRH-101 - Leading/trailing spaces in query - @sidebarSearch', query: '   My   ', expect: { type: 'noItem' } },
 
-  { name: 'Non-Latin characters / IME composition - @navSearch', query: 'テスト中文 thử', expect: { type: 'noItem' } },
+  { name: 'SRH-102 - Very long query (length boundary) - @sidebarSearch', query: 'x'.repeat(512), expect: { type: 'noItem' } },
 
-  { name: 'Special characters and symbols - @navSearch', query: '!@#$%^&*()_+=[]{}|;:\'",.<>/?~`', expect: { type: 'noItem' } },
+  { name: 'SRH-103 - Non-Latin characters - @sidebarSearch', query: 'テスト中文', expect: { type: 'noItem' } },
 
-  { name: 'Empty query submission - @smoke @regression @smoke', query: '', expect: { type: 'atLeast', count: 12 } },
+  { name: 'SRH-104 - Special characters and symbols - @sidebarSearch', query: '!@#$%^&*()_+=[]{}|;:\'",.<>/?~`', expect: { type: 'noItem' } },
 
-  { name: 'No results state - @navSearch @regression @smoke', query: 'THIS_SHOULD_NOT_MATCH_ANYTHING_12345', expect: { type: 'noItem' } },
+  { name: 'SRH-201 - Empty query submission - @smoke @regression @smoke', query: '', expect: { type: 'atLeast', count: 12 } },
+
+  { name: 'SRH-202 - No results state - @sidebarSearch @regression @smoke', query: 'THIS_SHOULD_NOT_MATCH_ANYTHING_12345', expect: { type: 'noItem' } },
 ];
