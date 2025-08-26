@@ -1,0 +1,21 @@
+{
+  "name": "playwright-orangehrm-pom",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test:all": "playwright test",
+    "test:login": "playwright test -g '@login'",
+    "test:navSearch": "playwright test -g '@navSearch'",
+    "test:regression": "playwright test -g '@regression'",
+    "test:smoke": "playwright test -g '@regression'",
+    "test:login_smoke": "playwright test -g '@login|@smoke'",
+    "prepare": "playwright install --with-deps"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "dotenv": "^17.2.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.2"
+  }
+}
