@@ -1,4 +1,14 @@
-node_modules
-playwright-report
-test-results
+# Node modules
+node_modules/
+
+# Playwright reports & artifacts
+playwright-report/
+test-results/
+*.log
+
+# Environment files
 .env
+
+# macOS system files
+.DS_Store
+**/.DS_Store
