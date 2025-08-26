@@ -1,6 +1,6 @@
 import { test } from '@fixtures';
 import { DashboardPage } from '@pages/DashboardPage';
-import { sidebarSearchData, assertSidebarSearch } from '@data/navSearchData';
+import { sidebarSearchData, assertSidebarSearch } from '@data/sidebarSearchData';
 
 test.describe('Navigation Search', () => {
   test.beforeEach(async ({ sharedPage }) => {
